@@ -238,14 +238,11 @@ async def set_commands(user_id):
     bot_messages = service.lm.local_messages(user_id=user_id)
     commands = [
         types.BotCommand(
-            command="/hello",
+            command="/start",
             description=f"🌟 {bot_messages['hello_description']}",
         ),
         types.BotCommand(
             command="/img", description="🎨 Generate image custom model"
-        ),
-        types.BotCommand(
-            command="/dalle", description="🎨 Generate image using DALLE-E"
         ),
         types.BotCommand(
             command="/lang",
@@ -263,13 +260,13 @@ async def set_commands(user_id):
             description=f"ℹ️  {bot_messages['help_description']}",
         ),
         types.BotCommand(
-            command="/changemodel", description="Change gpt model"
+            command="/changemodel", description="🔄 Change the GPT model"
         ),
     ]
     if service.BOT_OWNER_ID != '':
         commands.append(
             types.BotCommand(
-                command="/toggledm", description="Toggle Direct Message"
+                command="/toggledm", description="🔀 Toggle direct messages"
             )
         )
     response = requests.head(f"{service.API_BASE}/images/generations")
