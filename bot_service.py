@@ -325,8 +325,8 @@ class BotService:
                 builder.button(text=size)
         elif key == 'text_func':
             builder = InlineKeyboardBuilder()
-            builder.button(text="🔄Regenerate", callback_data="regenerate")
-            builder.button(text="❌Cancel", callback_data="cancel")
+            builder.button(text="🔄 Regenerate", callback_data="regenerate")
+            builder.button(text="🛑 Stop", callback_data="cancel")
         return builder.as_markup()
     
     async def __common_generate(self, call, process_prompt = ''):
