@@ -43,7 +43,6 @@ class ChatGPT:
             )
         else:
             print(f"Failed to fetch chat models. Status code: {response.status_code}")
-            self.models.append('gpt-4')
             self.models.append('gpt-3.5-turbo')
         if self.default_model not in self.models:
             self.models.append(self.default_model)
